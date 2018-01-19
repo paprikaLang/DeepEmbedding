@@ -22,8 +22,7 @@ class DeepEmbeddingTests: XCTestCase {
     }
     
     func testExample() {
-       let e = Event.viewWillAppear(name: "test")
-        XCTAssertEqual(e.metadata["name"], "test")
+      
     }
     
     func testPerformanceExample() {
