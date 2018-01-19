@@ -14,15 +14,22 @@ final class AnalyticsBackend {
         print("Sending event \(event) , metadata: \(metadata)")
     }
 }
-
+extension AnalyticsBackend {
+    func tapMeTapped() {
+        send(event: "viewController.tapMeTapped", metadata: [:])
+    }
+    func viewWillAppear(name: String) {
+        send(event: "viewController.appear", metadata: ["name":name,"time":"\(Date().timeIntervalSince1970)"])
+    }
+}
 class ViewController: UIViewController {
     @IBAction func tapMeTapped(_ sender: Any) {
-        AnalyticsBackend.shared.send(event: "viewController.tapMeTapped", metadata:[:] )
+        AnalyticsBackend.shared.tapMeTapped()
     }
     
    override  func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        AnalyticsBackend.shared.send(event: "viewController.appear", metadata: ["name":"master","time":"\(Date().timeIntervalSince1970)"])
+        AnalyticsBackend.shared.viewWillAppear(name: "master")
     }
 
 }
@@ -31,6 +38,6 @@ class ViewController: UIViewController {
 class DetailController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        AnalyticsBackend.shared.send(event: "viewController.appear", metadata: ["name":"detail","time":"\(Date().timeIntervalSince1970)"])
+        AnalyticsBackend.shared.viewWillAppear(name: "detail")
     }
 }
