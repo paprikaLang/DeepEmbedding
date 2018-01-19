@@ -14,6 +14,7 @@
 		2FFB5B2420119D45009193F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB5B2220119D45009193F7 /* LaunchScreen.storyboard */; };
 		2FFB5B2F20119D45009193F7 /* DeepEmbeddingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB5B2E20119D45009193F7 /* DeepEmbeddingTests.swift */; };
 		2FFB5B3A20119D45009193F7 /* DeepEmbeddingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB5B3920119D45009193F7 /* DeepEmbeddingUITests.swift */; };
+		2FFB5B4C20129190009193F7 /* Pop in Swift.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB5B4B20129190009193F7 /* Pop in Swift.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2FFB5B3520119D45009193F7 /* DeepEmbeddingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepEmbeddingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFB5B3920119D45009193F7 /* DeepEmbeddingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepEmbeddingUITests.swift; sourceTree = "<group>"; };
 		2FFB5B3B20119D45009193F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFB5B4B20129190009193F7 /* Pop in Swift.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pop in Swift.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2FFB5B1920119D45009193F7 /* AppDelegate.swift */,
 				2FFB5B1B20119D45009193F7 /* ViewController.swift */,
 				2FFB5B1D20119D45009193F7 /* Main.storyboard */,
+				2FFB5B4B20129190009193F7 /* Pop in Swift.pdf */,
 				2FFB5B2020119D45009193F7 /* Assets.xcassets */,
 				2FFB5B2220119D45009193F7 /* LaunchScreen.storyboard */,
 				2FFB5B2520119D45009193F7 /* Info.plist */,
@@ -235,6 +238,7 @@
 				2FFB5B2420119D45009193F7 /* LaunchScreen.storyboard in Resources */,
 				2FFB5B2120119D45009193F7 /* Assets.xcassets in Resources */,
 				2FFB5B1F20119D45009193F7 /* Main.storyboard in Resources */,
+				2FFB5B4C20129190009193F7 /* Pop in Swift.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

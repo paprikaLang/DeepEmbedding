@@ -9,20 +9,20 @@
 import XCTest
 @testable import DeepEmbedding
 
+final class FakeAnalytics: Analytics{
+    var events: [Event] = []
+    func send(_ event: Event) {
+        events.append(event)
+    }
+}
 class DeepEmbeddingTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testExample() {
-      
+        let vc = ViewController()
+        let fakeAnalytics = FakeAnalytics()
+        vc.analytics = fakeAnalytics
+        vc.tapMeTapped(self)
+        XCTAssertEqual(fakeAnalytics.events.count, 1)
     }
     
     func testPerformanceExample() {

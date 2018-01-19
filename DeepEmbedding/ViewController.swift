@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WebKit
 final class AnalyticsBackend {
     static let shared = AnalyticsBackend()
     func send(_ event: Event) {
@@ -15,6 +15,10 @@ final class AnalyticsBackend {
     }
 }
 
+protocol Analytics {
+    func send(_ event: Event) 
+}
+extension AnalyticsBackend: Analytics {}
 //struct Event {
 //    let name: String
 //    let metadata: [String:String]
@@ -46,13 +50,15 @@ extension Event {
     }
 }
 class ViewController: UIViewController {
+    
+    var analytics: Analytics = AnalyticsBackend.shared
     @IBAction func tapMeTapped(_ sender: Any) {
-        AnalyticsBackend.shared.send(.tapMeTapped(count:5))
+        analytics.send(.tapMeTapped(count:5))
     }
     
    override  func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    AnalyticsBackend.shared.send(.viewWillAppear(name: "master",date:Date()))
+        analytics.send(.viewWillAppear(name: "master",date:Date()))
     }
 
 }
@@ -62,5 +68,13 @@ class DetailController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         AnalyticsBackend.shared.send(.viewWillAppear(name: "detail",date:Date()))
+        
+        
+        let fileUrl = URL(fileURLWithPath: "/Users/paprika/Desktop/练习库/ObjcIO/DeepEmbeddingWithProtocol/DeepEmbedding/Pop in Swift.pdf")
+        let webView = WKWebView.init(frame: self.view.frame)
+        webView.backgroundColor = UIColor.red
+        webView.loadFileURL(fileUrl, allowingReadAccessTo: fileUrl)
+        view.addSubview(webView)
+       
     }
 }
